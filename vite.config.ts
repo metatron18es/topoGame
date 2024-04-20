@@ -16,9 +16,9 @@ export default defineConfig({
         navigateFallback: '/index.html',
       },
       manifest: {
-        name: 'My Vue App',
-        short_name: 'VueApp',
-        theme_color: '#ffffff',
+        name: 'TopoGame',
+        short_name: 'TopoGame',
+        theme_color: '#AFE57F',
         icons: [
           {
             src: '/icon-192x192.png',
