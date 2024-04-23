@@ -2,7 +2,7 @@
   border: 0 !important;
   clip: rect(1px, 1px, 1px, 1px) !important;
   -webkit-clip-path: inset(50%) !important;
-    clip-path: inset(50%) !important;
+  clip-path: inset(50%) !important;
   height: 1px !important;
   margin: -1px !important;
   overflow: hidden !important;
@@ -10,4 +10,24 @@
   position: absolute !important;
   width: 1px !important;
   white-space: nowrap !important;
+}
+
+.button {
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  border: 1px solid var(--primary-color);
+  background-color: var(--primary-color);
+  font-family: var(--font-inter);
+  color: var(--secondary-color);
+  cursor: pointer;
+  transition:
+    background-color 0.3s,
+    color 0.3s,
+    font-weight 0.3s;
+}
+
+.button:hover {
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+  font-weight: bold;
 }
