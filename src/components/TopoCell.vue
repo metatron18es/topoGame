@@ -2,6 +2,7 @@
 import { computed, ref, watch } from 'vue'
 import { useConfigurationStore } from '@/stores/configuration'
 import { useGameStore } from '@/stores/game'
+import { useVibrate } from '@vueuse/core'
 
 const props = defineProps({
   active: {
@@ -13,6 +14,8 @@ const props = defineProps({
     required: true
   }
 })
+
+const { vibrate } = useVibrate({ pattern: [100] })
 
 const emit = defineEmits(['close'])
 
@@ -35,6 +38,7 @@ const topoClicked = () => {
     timerId.value = null
     useGameStore().incrementScore(useConfigurationStore().increment)
     useGameStore().newTopo(props.cell)
+    vibrate()
   }
 }
 
