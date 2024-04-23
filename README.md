@@ -37,6 +37,10 @@ npm run build
 ```sh
 npm run test:unit
 ```
+If you prefer visual interface
+```sh
+npm run test:ui
+```
 
 ### Run End-to-End Tests with [Cypress](https://www.cypress.io/)
 
@@ -58,4 +62,10 @@ npm run test:e2e
 
 ```sh
 npm run lint
+```
+
+### Format code with Prettier
+
+```sh
+npm run format
 ```

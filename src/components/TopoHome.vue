@@ -18,8 +18,7 @@ const startGame = () => {
   }
 }
 onMounted(() => {
-  if(input.value)
-    input.value.focus()
+  if (input.value) input.value.focus()
 })
 </script>
 

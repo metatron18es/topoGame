@@ -8,8 +8,8 @@ import { setActivePinia, createPinia } from 'pinia'
 describe('TopoCell Component', () => {
   beforeEach(() => {
     setActivePinia(createPinia())
-    vi.useFakeTimers();
-  });
+    vi.useFakeTimers()
+  })
 
   it('emits "close" event when topo is clicked and timer is active', async () => {
     const wrapper = mount(TopoCell, {
@@ -37,15 +37,15 @@ describe('TopoCell Component', () => {
         cell: 1
       }
     })
-  
+
     const wrapperCast = wrapper.vm as unknown as {
       timerId: { value: number } | null
     }
     wrapperCast.timerId = null
-  
+
     await wrapper.find('.cell').trigger('click')
     await nextTick()
-  
+
     expect(useGameStore().score).toBe(0) // Verificar que el score no cambie al hacer clic en el topo
   })
 
@@ -56,19 +56,19 @@ describe('TopoCell Component', () => {
         cell: 1
       }
     })
-    
+
     wrapper.setProps({ active: true })
     await nextTick()
-  
+
     const wrapperCast = wrapper.vm as unknown as {
       timerId: { value: number }
     }
-    wrapperCast.timerId = { value: 123 } 
-  
+    wrapperCast.timerId = { value: 123 }
+
     vi.advanceTimersByTime(1000)
-  
+
     await nextTick()
-  
+
     expect(wrapper.emitted('close')).toBeTruthy()
   })
 
@@ -79,17 +79,17 @@ describe('TopoCell Component', () => {
         cell: 1
       }
     })
-    
+
     useGameStore().setGameStarted(true)
-  
+
     const wrapperCast = wrapper.vm as unknown as {
       timerId: { value: number }
     }
-    wrapperCast.timerId = { value: 123 } 
+    wrapperCast.timerId = { value: 123 }
 
     wrapper.setProps({ active: false })
     await nextTick()
-  
+
     expect(wrapper.emitted('close')).toBeTruthy()
   })
 })

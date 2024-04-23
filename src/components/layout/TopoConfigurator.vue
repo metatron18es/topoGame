@@ -42,7 +42,7 @@ const openConfigurator = () => {
     <ul class="option-list">
       <li class="option-item">
         <label class="range-label" for="difficulty">Difficulty</label>
-        <span class="range-value">{{ difficultyText }}</span>
+        <span data-test="difficulty-range" class="range-value">{{ difficultyText }}</span>
         <input
           class="range-input"
           name="difficulty"
@@ -56,7 +56,7 @@ const openConfigurator = () => {
       </li>
       <li class="option-item">
         <label class="range-label" for="quantity">Quantity</label>
-        <span class="range-value">{{ quantity }}</span>
+        <span data-test="quantity-range" class="range-value">{{ quantity }}</span>
         <input
           class="range-input"
           name="quantity"

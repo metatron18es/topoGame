@@ -29,7 +29,7 @@ const cssTime = computed(() => {
   return `${time.value}ms`
 })
 
-const topoClicked = () => {  
+const topoClicked = () => {
   if (timerId.value !== null) {
     clearTimeout(timerId.value)
     timerId.value = null
@@ -55,8 +55,8 @@ watch(
 
 watch(
   () => props.active,
-  (active) => {    
-    if (active) {            
+  (active) => {
+    if (active) {
       timerId.value = setTimeout(() => {
         emit('close')
         timerId.value = null
