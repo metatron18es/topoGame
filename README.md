@@ -31,6 +31,10 @@ npm run dev
 ```sh
 npm run build
 ```
+If you want to see production build in your local, you must create the build and then
+```sh
+npm run preview
+```
 
 ### Run Unit Tests with [Vitest](https://vitest.dev/)
 
